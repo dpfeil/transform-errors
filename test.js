@@ -41,7 +41,7 @@ it('should tranform errors', () => {
   // in this specific case,
   // errors for `url` and `urls` keys should be nested
   // see expected object below
-  const result = transformErrors();
+  const result = transformErrors(errors,'url','urls');
 
   assert.deepEqual(result.toJS(), {
     name: 'This field is required.',

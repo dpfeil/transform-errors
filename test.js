@@ -1,10 +1,8 @@
 const Immutable = require('immutable');
 const assert = require('assert');
+const transformErrors = require('./transform-errors');
 
 
-function transformErrors() {
-  return Immutable.Map();
-}
 
 it('should tranform errors', () => {
   // example error object returned from API converted to Immutable.Map

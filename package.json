@@ -1,0 +1,25 @@
+{
+  "name": "transform-errors",
+  "version": "0.0.0",
+  "description": "concatenate all errors from error object return by REST API",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dpfeil/transform-errors.git"
+  },
+  "author": "dpfeil@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dpfeil/transform-errors/issues"
+  },
+  "homepage": "https://github.com/dpfeil/transform-errors#readme",
+  "dependencies": {
+    "immutable": "^4.0.0-rc.12"
+  },
+  "devDependencies": {
+    "mocha": "^8.1.1"
+  }
+}

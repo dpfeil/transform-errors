@@ -20,6 +20,6 @@
     "immutable": "^4.0.0-rc.12"
   },
   "devDependencies": {
-    "mocha": "^8.1.1"
+    "mocha": "^7.2.0"
   }
 }

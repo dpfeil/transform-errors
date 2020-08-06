@@ -11,17 +11,17 @@ function pipe(...fns) {
   return (x) => fns.reduce((v, f) => f(v), x);
 }
 
-function concat(keys, map) {
+function concat(map) {
   return map.join(". ") + ".";
 }
 
-function unique(keys, map) {
+function unique(map) {
   return map.toSet().toList();
 }
 
 function traverse(keys, map) {
   if (List.isList(map) && map.every((x) => typeof x === "string"))
-    return map.map(unique.bind(null, keys)).map(concat.bind(null, keys));
+    return concat(unique(map));
   return map.map(traverse.bind(null, keys));
 }
 

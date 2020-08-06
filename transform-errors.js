@@ -1,15 +1,8 @@
 const { List } = require("immutable");
 
-function lazyCurry(fn) {
-  return (...args) => fn.bind(null, ...args);
-}
-const map = lazyCurry((fn, arr) => arr.map(fn));
-function mapWith(...args) {
-  return lazyCurry((fn, arr) => arr.map(fn.bind(null, [...args])));
-}
-function pipe(...fns) {
-  return (x) => fns.reduce((v, f) => f(v), x);
-}
+function lazyCurry(fn) { return (...args) => fn.bind(null, ...args); }
+function mapWith(...args) { return lazyCurry((fn, arr) => arr.map(fn.bind(null, [...args]))); }
+function pipe(...fns) { return (x) => fns.reduce((v, f) => f(v), x); }
 
 function concat(map) {
   return map.join(". ") + ".";
@@ -31,7 +24,10 @@ function flatten(keys, map, key) {
 }
 
 function transform(...args) {
-  return pipe(mapWith(...args)(flatten), mapWith(...args)(traverse));
+  return pipe(
+    mapWith(...args)(flatten), 
+    mapWith(...args)(traverse)
+  );
 }
 
 module.exports = (errors, ...args) => transform(...args)(errors);
